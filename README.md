@@ -1,4 +1,4 @@
-# Yfarch BIM Pro Tools for Revit 2019
+﻿# Yfarch BIM Pro Tools for Revit 2019
 
 Yfarch BIM Pro Tools for Revit 2019 是一套專為 Autodesk Revit 2019 製作的 BIM 輔助工具集，目標是減少重複建模、整理、編號、接合與匯出工作，讓建築與結構模型製作流程更快、更一致。
 
@@ -48,83 +48,119 @@ English:
 
 ## 功能介紹 Features
 
-### 自動樓層 Auto Levels
+### 1. 樓層 Auto Levels
 
-提供 Revit 樓層表格化編輯工具，可讀取既有 Level，調整樓層名稱、樓高與標高，並支援新增地上層、地下層與刪除樓層。套用後會一次寫回 Revit，並同步調整 Grid 的垂直 3D 範圍。
+以表格方式建立與管理 Revit 樓層，可讀取既有 Level，調整樓層名稱、樓高與標高，並支援新增地上層、地下層與刪除樓層。套用後會一次寫回 Revit，並同步調整 Grid 的垂直 3D 範圍。
 
-Provides a table-based Revit Level editor. It can read existing levels, edit level names, floor heights, and elevations, add above-ground or basement levels, mark levels for deletion, and apply changes back to Revit in one transaction.
+Provides a table-based Revit Level editor for managing level names, floor heights, elevations, above-ground floors, basement floors, deleted levels, and related Grid 3D extents.
 
-### 自動軸網 Auto Grids
+### 2. 網格 Auto Grids
 
-協助快速建立或整理 Revit 軸網，減少手動建立軸線、檢查軸號與調整定位基準的時間。適合在專案初期建立建築或結構模型基準時使用。
+由 CAD 軸線圖層產生 Revit Grid，協助快速建立模型基準，減少手動建立軸線、檢查軸號與調整定位基準的時間。
 
-Helps create or organize Revit grids efficiently, reducing manual grid creation, grid checking, and setup time during early modeling stages.
+Creates Revit grids from CAD grid layers to speed up early model setup and reduce repetitive grid creation and checking work.
 
-### 自動結構柱 Auto Structural Columns
+### 3. 結構柱 Auto Structural Columns
 
-輔助從圖面或模型條件產生結構柱，降低逐一放置柱構件與比對柱型的工作量。適合需要將 CAD 或模型資訊轉換為 Revit 結構柱的流程。
+由 CAD 柱位圖層產生 Revit 結構柱，並輔助柱型比對、柱位辨識與偏移檢查，適合將平面圖柱位快速轉換為結構模型。
 
-Assists with generating structural columns from drawing or model conditions, reducing repetitive placement and type matching work.
+Generates Revit structural columns from CAD column layers, including type matching, column recognition, and placement checks for structural modeling workflows.
 
-### 自動結構梁 Auto Structural Beams
+### 4. 結構樑 Auto Structural Beams
 
-協助產生結構梁，並輔助檢查梁與柱之間的距離、位置與端點關係。適合結構建模、初步配置與模型整理階段。
+由 CAD 樑線圖層產生 Revit 結構樑，並輔助檢查樑與柱之間的距離、位置與端點關係，降低逐一建立樑構件的工作量。
 
-Assists with structural beam generation and supports checks around beam-column distance, placement, and endpoint relationships.
+Generates Revit structural beams from CAD beam layers and supports beam-column distance, placement, and endpoint checks.
 
-### 自動建築牆 Auto Architecture Walls
+### 5. 建築牆 Auto Architecture Walls
 
-協助從 CAD 牆線與圖層資訊產生 Revit 建築牆，並可依牆型、完成面與開口相關圖層進行牆體判讀與建立。適合將建築平面 CAD 牆線快速轉換為 Revit 牆模型。
+依牆壁類型讀取 CAD 圖層，自動建立 Revit 建築牆，並支援完成面、牆型與開口相關圖層判讀，適合將建築平面 CAD 牆線轉換為 Revit 牆模型。
 
-Assists with generating Revit architecture walls from CAD wall lines and layer information, including wall type, finish wall, and opening-related interpretation workflows.
+Generates Revit architecture walls from CAD wall layers, including wall type, finish wall, and opening-related interpretation workflows.
 
-### 自動結構板 Auto Structural Slabs
+### 6. 結構樓板 Auto Structural Slabs
 
-輔助建立結構樓板，減少手動描繪樓板邊界與重複設定構件的時間。適合樓層平面建模與結構板配置作業。
+由 CAD 或模型邊界產生 Revit 結構樓板，減少手動描繪樓板邊界與重複設定構件的時間，適合樓層平面建模與結構板配置作業。
 
-Helps create structural slabs and reduces repetitive work when defining slab boundaries and related element settings.
+Creates Revit structural slabs from CAD or model boundaries to reduce repetitive slab boundary drafting and setup work.
 
-### 自動牆接合 Auto Wall Join
+### 7. 接合牆體 Auto Wall Join
 
-協助處理牆體幾何接合，減少牆交接位置的手動整理時間。適合牆量較多、平面需要大量清理的 Revit 專案。
+依照指定樓層範圍，自動處理牆體與相關構件的 Join Geometry，減少牆交接位置的手動整理時間。
 
-Helps process wall geometry joins and reduces manual cleanup around wall intersections.
+Automatically processes Join Geometry for walls and related elements within selected levels, reducing manual wall cleanup work.
 
-### 自動樓板邊界接合 Auto Floor Boundary Join
+### 8. 接合樓層交界 Auto Floor Boundary Join
 
-針對樓板或樓層邊界附近的幾何關係進行輔助接合與整理，提升模型邊界處理效率。
+依照指定樓層範圍，自動處理樓層交界附近的 Join Geometry，改善樓板、牆體或上下樓層邊界附近的幾何整理效率。
 
-Assists with joining and organizing geometry around floor or level boundaries to improve model cleanup efficiency.
+Processes Join Geometry around floor or level boundaries to improve model cleanup near slab, wall, and level transition conditions.
 
-### 柱梁接合切換 Column And Beam Join Switch
+### 9. 切換柱樑接合 Column And Beam Join Switch
 
-提供柱、梁接合狀態切換與整理輔助，讓使用者更快處理構件交接時的顯示與幾何關係。
+依照指定樓層範圍，批次切換柱樑之間的接合順序，協助整理柱、樑交接時的顯示與幾何關係。
 
-Provides helper commands for switching and organizing column-beam join states, making it easier to manage element intersections.
+Batch switches column-beam join order within selected levels to help control visibility and geometry behavior at intersections.
 
-### 自動梁牆剪切 Auto Cut Beam-Wall
+### 10. 切割樑牆 Auto Cut Beam-Wall
 
-協助處理結構梁與牆體之間的剪切、交會與接合關係，降低手動逐一檢查梁牆交接位置的時間。適合在梁牆關係較多的樓層模型中進行批次整理。
+在平面圖中依使用者選取的切割線處理結構樑與牆體，可批次切割樑牆交會位置，並搭配 Join Geometry 讓平面表現維持乾淨。
 
-Assists with beam-wall cutting, intersection, and joining workflows, reducing manual checking and cleanup time around beam-wall conditions in Revit models.
+Cuts beam-wall intersections based on selected plan-view cut lines and supports cleanup with Join Geometry for clearer plan representation.
 
-### 車位自動編號 Parking Space Numbering
+### 11. 車位編號 Parking Space Numbering
 
-協助停車位快速編號，減少人工逐一輸入編號造成的時間成本與錯誤。適合地下室、停車場與大量車位平面整理。
+依照選取路徑與設定規則，批次建立或更新停車位編號，降低地下室、停車場與大量車位平面逐一輸入編號的時間與錯誤。
 
-Helps number parking spaces quickly, reducing manual input time and numbering mistakes in parking plans.
+Creates or updates parking space numbers in batches based on selected paths and numbering rules.
 
-### Revit 匯出 SketchUp 輔助 Revit To SketchUp Export Helper
+### 12. 軸線尺寸 Grid Dimension
 
-提供 Revit 模型匯出到 SketchUp 相關流程的輔助工具，讓模型交換與後續視覺化作業更順暢。
+在平面圖中選取同方向平行 Grid，自動產生連續軸線尺寸與總長尺寸，適合快速完成軸線到軸線的外層尺寸標註。
 
-Provides helper commands for Revit-to-SketchUp export workflows, supporting smoother model exchange and visualization preparation.
+Creates continuous grid dimensions and overall dimensions from selected parallel grids in plan views.
 
-### 授權資訊 License Information
+### 13. 柱位尺寸 Column Layout Dimension
 
-提供授權狀態查看功能，方便使用者確認目前授權或試用狀態。
+針對柱位放樣圖產生柱位定位尺寸，可依選取柱與軸線建立柱中心、柱邊或軸線定位尺寸，並輸出診斷資訊協助檢查未成功標註的位置。
 
-Provides a license information command so users can check current activation or trial status.
+Creates column layout dimensions from selected columns and grids, supporting column center, column edge, and grid-based positioning dimensions.
+
+### 14. 外牆大尺寸 Facade Major Dimension
+
+依結構柱與建築牆標註外牆主要進退面尺寸。使用者選取同一面向的柱牆並點選尺寸線側，工具會建立主要段落尺寸與總尺寸。
+
+Creates major facade dimensions from selected structural columns and architecture walls, including primary facade steps and overall dimensions.
+
+### 15. 外牆細部尺寸 Facade Detail Dimension
+
+標註外牆面內的門窗、開口、Grid 與柱牆細部尺寸，適合整理外牆面段落內的局部小尺寸與開口關係。
+
+Creates detailed facade dimensions for openings, grids, columns, walls, and local facade segments.
+
+### 16. 外牆自動尺寸 Facade Auto Dimension
+
+依選取的外牆相關物件，自動判斷上、下、左、右面向，並整合產生外牆大尺寸與外牆細部尺寸，減少分開操作的時間。
+
+Automatically determines the facade direction from selected elements and creates both major and detail facade dimensions.
+
+### 17. 內牆尺寸 Interior Wall Dimension
+
+選取內牆與使用者事先繪製的尺寸輔助線，沿輔助線自動標註牆面間距、牆厚與房間尺寸，適合室內隔間尺寸整理。
+
+Creates interior wall dimensions along user-drawn guide lines, including wall spacing, wall thickness, and room-related distances.
+
+### 18. SketchUp Export
+
+將目前 Revit 3D 視圖先匯出 DWG，再轉成 SketchUp 2020 可開啟的 SKP 檔，協助模型交換與後續視覺化作業。
+
+Exports the current Revit 3D view to DWG and converts it into a SketchUp 2020-compatible SKP file.
+
+### 19. 授權資訊 License Information
+
+提供授權狀態查看功能，可確認試用狀態、機器碼、到期日，並依畫面指示申請或更新授權。
+
+Shows license and trial information, including machine code, expiration status, and activation or renewal guidance.
 
 ## 適用對象 Who This Is For
 
