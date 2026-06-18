@@ -10,7 +10,7 @@ Yfarch BIM Pro Tools for Revit 2019 is a BIM productivity toolset built for Auto
 
 Download the latest installer from the GitHub Releases page:
 
-https://github.com/FusionDraw9257/YfarchBIMProToolsForRevit2019/releases
+https://github.com/Stcfinch/YfarchBIMProToolsForRevit2019/releases
 
 目前建議下載檔案：
 
@@ -84,79 +84,91 @@ Generates Revit architecture walls from CAD wall layers, including wall type, fi
 
 Creates Revit structural slabs from CAD or model boundaries to reduce repetitive slab boundary drafting and setup work.
 
-### 7. 接合牆體 Auto Wall Join
+### 7. 接合面修正 Auto Join Face Align
+
+以結構柱邊界面為基準，修正牆端接柱位置的極小面偏差，減少牆柱接合後產生的雜線或細縫。
+
+Aligns tiny wall-to-column face offsets against structural column faces to reduce join display artifacts caused by very small positioning drift.
+
+### 8. 接合牆體 Auto Wall Join
 
 依照指定樓層範圍，自動處理牆體與相關構件的 Join Geometry，減少牆交接位置的手動整理時間。
 
 Automatically processes Join Geometry for walls and related elements within selected levels, reducing manual wall cleanup work.
 
-### 8. 接合樓層交界 Auto Floor Boundary Join
+### 9. 接合樓層交界 Auto Floor Boundary Join
 
 依照指定樓層範圍，自動處理樓層交界附近的 Join Geometry，改善樓板、牆體或上下樓層邊界附近的幾何整理效率。
 
 Processes Join Geometry around floor or level boundaries to improve model cleanup near slab, wall, and level transition conditions.
 
-### 9. 切換柱樑接合 Column And Beam Join Switch
+### 10. 切換柱樑接合 Column And Beam Join Switch
 
 依照指定樓層範圍，批次切換柱樑之間的接合順序，協助整理柱、樑交接時的顯示與幾何關係。
 
 Batch switches column-beam join order within selected levels to help control visibility and geometry behavior at intersections.
 
-### 10. 切割樑牆 Auto Cut Beam-Wall
+### 11. 切割樑牆 Auto Cut Beam-Wall
 
 在平面圖中依使用者選取的切割線處理結構樑與牆體，可批次切割樑牆交會位置，並搭配 Join Geometry 讓平面表現維持乾淨。
 
 Cuts beam-wall intersections based on selected plan-view cut lines and supports cleanup with Join Geometry for clearer plan representation.
 
-### 11. 車位編號 Parking Space Numbering
+### 12. 車位編號 Parking Space Numbering
 
 依照選取路徑與設定規則，批次建立或更新停車位編號，降低地下室、停車場與大量車位平面逐一輸入編號的時間與錯誤。
 
 Creates or updates parking space numbers in batches based on selected paths and numbering rules.
 
-### 12. 軸線尺寸 Grid Dimension
+### 13. 軸線尺寸 Grid Dimension
 
 在平面圖中選取同方向平行 Grid，自動產生連續軸線尺寸與總長尺寸，適合快速完成軸線到軸線的外層尺寸標註。
 
 Creates continuous grid dimensions and overall dimensions from selected parallel grids in plan views.
 
-### 13. 柱位尺寸 Column Layout Dimension
+### 14. 樓層尺寸 Level Dimension
+
+在立面圖或剖面圖中依 Level 建立逐層高度與分段總高度尺寸，可依 GL、R1FL 與屋突段落整理樓層高度標註。
+
+Creates level height dimensions in elevation or section views, including floor-by-floor dimensions and grouped overall height dimensions.
+
+### 15. 柱位尺寸 Column Layout Dimension
 
 針對柱位放樣圖產生柱位定位尺寸，可依選取柱與軸線建立柱中心、柱邊或軸線定位尺寸，並輸出診斷資訊協助檢查未成功標註的位置。
 
 Creates column layout dimensions from selected columns and grids, supporting column center, column edge, and grid-based positioning dimensions.
 
-### 14. 外牆大尺寸 Facade Major Dimension
+### 16. 外牆大尺寸 Facade Major Dimension
 
 依結構柱與建築牆標註外牆主要進退面尺寸。使用者選取同一面向的柱牆並點選尺寸線側，工具會建立主要段落尺寸與總尺寸。
 
 Creates major facade dimensions from selected structural columns and architecture walls, including primary facade steps and overall dimensions.
 
-### 15. 外牆細部尺寸 Facade Detail Dimension
+### 17. 外牆小尺寸 Facade Detail Dimension
 
 標註外牆面內的門窗、開口、Grid 與柱牆細部尺寸，適合整理外牆面段落內的局部小尺寸與開口關係。
 
 Creates detailed facade dimensions for openings, grids, columns, walls, and local facade segments.
 
-### 16. 外牆自動尺寸 Facade Auto Dimension
+### 18. 外牆大小尺寸 Facade Auto Dimension
 
-依選取的外牆相關物件，自動判斷上、下、左、右面向，並整合產生外牆大尺寸與外牆細部尺寸，減少分開操作的時間。
+依選取的外牆相關物件自動判斷面向，並整合產生外牆大尺寸與外牆小尺寸，減少分開操作的時間。
 
 Automatically determines the facade direction from selected elements and creates both major and detail facade dimensions.
 
-### 17. 內牆尺寸 Interior Wall Dimension
+### 19. 內牆尺寸 Interior Wall Dimension
 
 選取內牆與使用者事先繪製的尺寸輔助線，沿輔助線自動標註牆面間距、牆厚與房間尺寸，適合室內隔間尺寸整理。
 
 Creates interior wall dimensions along user-drawn guide lines, including wall spacing, wall thickness, and room-related distances.
 
-### 18. SketchUp Export
+### 20. SketchUp Export
 
 將目前 Revit 3D 視圖先匯出 DWG，再轉成 SketchUp 2020 可開啟的 SKP 檔，協助模型交換與後續視覺化作業。
 
 Exports the current Revit 3D view to DWG and converts it into a SketchUp 2020-compatible SKP file.
 
-### 19. 授權資訊 License Information
+### 21. 授權資訊 License Information
 
 提供授權狀態查看功能，可確認試用狀態、機器碼、到期日，並依畫面指示申請或更新授權。
 
