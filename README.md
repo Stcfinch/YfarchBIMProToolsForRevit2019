@@ -164,9 +164,9 @@ Creates interior wall dimensions along user-drawn guide lines, including wall sp
 
 ### 20. 自動圖紙化 Auto Sheet View Placement
 
-依視圖名稱與從屬視圖關係，自動建立 Revit 圖紙並放置 Viewport。可先勾選要出圖的視圖，略過已放到圖紙的視圖與已有從屬視圖的主視圖，依圖號分組、依序號排序，並自動判斷 A1 垂直、A1 水平與旋轉 90 度圖框的可放區。排版會由左到右、由下到上配置，視圖間距預設 8 cm，放不下時依序嘗試 7.5、7、6.5、6 cm，完成後輸出 TXT 檢測報告供檢查。
+依視圖名稱與從屬視圖關係，自動建立 Revit 圖紙並放置 Viewport，適合將已整理完成的平面圖、立面圖與剖面圖批次放入對應圖框。工具會依圖號分組、依視圖順序排版，並協助減少重複建立圖紙與手動放置視圖的時間。
 
-Creates Revit sheets and places viewports based on view names and dependent-view relationships. It lets users select which views to place, skips already placed views and parent views with dependent views, groups views by sheet number, sorts them by sequence, chooses a suitable A1 title block layout, arranges viewports from left to right and bottom to top, tests spacing from 8 cm down to 6 cm, and exports a TXT report for review.
+Creates Revit sheets and places viewports based on view names and dependent-view relationships, helping users batch-place prepared plans, elevations, and sections onto matching sheets. It groups views by sheet number, arranges them by view sequence, and reduces repetitive sheet creation and manual viewport placement work.
 
 ### 21. SketchUp Export
 
