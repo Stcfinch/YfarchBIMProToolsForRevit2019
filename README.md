@@ -162,13 +162,19 @@ Automatically determines the facade direction from selected elements and creates
 
 Creates interior wall dimensions along user-drawn guide lines, including wall spacing, wall thickness, and room-related distances.
 
-### 20. SketchUp Export
+### 20. 自動圖紙化 Auto Sheet View Placement
 
-將目前 Revit 3D 視圖先匯出 DWG，再轉成 SketchUp 2020 可開啟的 SKP 檔，協助模型交換與後續視覺化作業。
+依視圖名稱與從屬視圖關係，自動建立 Revit 圖紙並放置 Viewport。可先勾選要出圖的視圖，略過已放到圖紙的視圖與已有從屬視圖的主視圖，依圖號分組、依序號排序，並自動判斷 A1 垂直、A1 水平與旋轉 90 度圖框的可放區。排版會由左到右、由下到上配置，視圖間距預設 8 cm，放不下時依序嘗試 7.5、7、6.5、6 cm，完成後輸出 TXT 檢測報告供檢查。
 
-Exports the current Revit 3D view to DWG and converts it into a SketchUp 2020-compatible SKP file.
+Creates Revit sheets and places viewports based on view names and dependent-view relationships. It lets users select which views to place, skips already placed views and parent views with dependent views, groups views by sheet number, sorts them by sequence, chooses a suitable A1 title block layout, arranges viewports from left to right and bottom to top, tests spacing from 8 cm down to 6 cm, and exports a TXT report for review.
 
-### 21. 授權資訊 License Information
+### 21. SketchUp Export
+
+將目前 Revit 3D 視圖先匯出為 DWG，再啟動 SketchUp 2020 轉成可開啟的 SKP 檔，協助模型交換、簡報與後續視覺化作業。工具會以目前作用中的 3D 視圖作為輸出範圍，輸出資料夾會建立在 RVT 檔案旁的 `RevitToSketchUpExports`，若 SketchUp 未自動完成轉換，也會保留批次檔與 Ruby 腳本供使用者重新執行。
+
+Exports the active Revit 3D view to DWG and launches SketchUp 2020 to convert it into a compatible SKP file for model exchange, presentation, and visualization workflows. The output is saved beside the RVT file in `RevitToSketchUpExports`, with batch and Ruby fallback scripts kept for rerunning the conversion if SketchUp does not finish automatically.
+
+### 22. 授權資訊 License Information
 
 提供授權狀態查看功能，可確認試用狀態、機器碼、到期日，並依畫面指示申請或更新授權。
 
