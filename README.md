@@ -26,6 +26,12 @@ YfarchBIMProToolsForRevit2019.zip
 - Windows
 - .NET Framework 4.7.2 或相容環境
 
+## 語言支援 Language Support
+
+安裝程式與 Revit 內的使用介面支援繁體中文與英文，方便在不同語言環境中安裝、部署與使用。
+
+The installer and in-app Revit interface support both Traditional Chinese and English for easier installation, deployment, and daily use across different language environments.
+
 ## 安裝方式 Installation
 
 中文：
