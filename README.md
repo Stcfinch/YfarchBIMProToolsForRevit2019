@@ -80,9 +80,9 @@ Organizes structural size table data for each level, preparing column, beam, and
 
 ### 5. 結構柱 Auto Structural Columns
 
-由 CAD 柱位圖層產生 Revit 結構柱，並輔助柱型比對、柱位辨識與偏移檢查，適合將平面圖柱位快速轉換為結構模型。
+由 CAD 柱位圖層產生 Revit 結構柱，支援混凝土柱與 RHS 鋼構柱建模，可讀取 DWG 圖塊屬性與柱號，並輔助柱型比對、Grid 距離校正、修正報告與修訂雲形線標示，適合將平面圖柱位快速轉換為可檢查的結構模型。
 
-Generates Revit structural columns from CAD column layers, including type matching, column recognition, and placement checks for structural modeling workflows.
+Generates Revit structural columns from CAD column layers, supporting both concrete columns and RHS steel columns. It can read DWG block attributes and column marks, assist with type matching, grid-distance correction, correction reports, and revision cloud marking for more checkable structural modeling workflows.
 
 ### 6. 結構樑 Auto Structural Beams
 
@@ -152,9 +152,9 @@ Creates level height dimensions in elevation or section views, including floor-b
 
 ### 17. 柱位尺寸 Column Layout Dimension
 
-針對柱位放樣圖產生柱位定位尺寸，可依選取柱與軸線建立柱中心、柱邊或軸線定位尺寸，並輸出診斷資訊協助檢查未成功標註的位置。
+針對柱位放樣圖產生柱位定位尺寸，可依選取柱與軸線建立柱中心、柱邊或軸線定位尺寸，並支援混凝土包覆 RHS 鋼柱的分層標註邏輯。完成後會輸出診斷資訊，協助檢查未成功標註或特殊配對的位置。
 
-Creates column layout dimensions from selected columns and grids, supporting column center, column edge, and grid-based positioning dimensions.
+Creates column layout dimensions from selected columns and grids, supporting column center, column edge, and grid-based positioning dimensions, including layered dimensioning for concrete-encased RHS steel columns. Diagnostic output helps review skipped, failed, or special pairing conditions.
 
 ### 18. 外牆大尺寸 Facade Major Dimension
 
@@ -180,19 +180,37 @@ Automatically determines the facade direction from selected elements and creates
 
 Creates interior wall dimensions along user-drawn guide lines, including wall spacing, wall thickness, and room-related distances.
 
-### 22. 自動圖紙化 Auto Sheet View Placement
+### 22. 樑位尺寸 Structural Beam Dimension
+
+用於筏基層平面，依使用者繪製的 Detail Line 輔助線，自動標註結構樑邊界與樑距，協助整理筏基層樑位尺寸。
+
+Creates structural beam dimensions in raft foundation plans using user-drawn Detail Line guides, helping annotate beam boundaries and spacing more efficiently.
+
+### 23. 地下外牆尺寸 Basement Exterior Wall Dimension
+
+針對地下層外牆平面，選取同一面向的結構柱與 Grid，自動建立柱寬、柱距，以及柱邊與 Grid 關係尺寸，協助整理地下外牆定位標註。
+
+Creates basement exterior wall dimensions from selected structural columns and grids on the same side, including column widths, column spacing, and column-edge-to-grid relationships.
+
+### 24. 自動圖紙化 Auto Sheet View Placement
 
 依視圖名稱與從屬視圖關係，自動建立 Revit 圖紙並放置 Viewport，適合將已整理完成的平面圖、立面圖與剖面圖批次放入對應圖框。工具會依圖號分組、依視圖順序排版，並協助減少重複建立圖紙與手動放置視圖的時間。
 
 Creates Revit sheets and places viewports based on view names and dependent-view relationships, helping users batch-place prepared plans, elevations, and sections onto matching sheets. It groups views by sheet number, arranges them by view sequence, and reduces repetitive sheet creation and manual viewport placement work.
 
-### 23. SketchUp Export
+### 25. SketchUp Export
 
 將目前 Revit 3D 視圖先匯出為 DWG，再啟動 SketchUp 2020 轉成可開啟的 SKP 檔，協助模型交換、簡報與後續視覺化作業。工具會以目前作用中的 3D 視圖作為輸出範圍，輸出資料夾會建立在 RVT 檔案旁的 `RevitToSketchUpExports`，若 SketchUp 未自動完成轉換，也會保留批次檔與 Ruby 腳本供使用者重新執行。
 
 Exports the active Revit 3D view to DWG and launches SketchUp 2020 to convert it into a compatible SKP file for model exchange, presentation, and visualization workflows. The output is saved beside the RVT file in `RevitToSketchUpExports`, with batch and Ruby fallback scripts kept for rerunning the conversion if SketchUp does not finish automatically.
 
-### 24. 授權資訊 License Information
+### 26. 連線開關 AI Collaboration
+
+開啟或關閉 AI 本機協作連線，讓 AI 在安全的本機流程中讀取目前模型脈絡，並依明確方案協助建立可復原的 Revit 平面配置。
+
+Turns the local AI collaboration connection on or off, allowing AI-assisted workflows to read the current model context and apply explicit, undoable Revit layout plans through a local process.
+
+### 27. 授權資訊 License Information
 
 提供授權狀態查看功能，可確認試用狀態、機器碼、到期日，並依畫面指示申請或更新授權。
 
